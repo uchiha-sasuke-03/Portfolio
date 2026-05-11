@@ -1,5 +1,5 @@
 import {
-  Gamepad2, Film, Cpu, BookOpen, Plane, ShieldCheck, Zap
+  Gamepad2, Film, Cpu, BookOpen, Plane, ShieldCheck
 } from 'lucide-react'
 import { hobbies } from '../data/portfolioData'
 import SectionCharacter from './SectionCharacter'

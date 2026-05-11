@@ -1,4 +1,4 @@
-import { Mail, MapPin, ChevronDown, Code, Cpu, Database, Zap, Sword, Scroll, Shield } from 'lucide-react';
+import { Mail, ChevronDown, Zap, Sword, Scroll, Shield } from 'lucide-react';
 import { useTypewriter } from '../hooks/useTypewriter';
 import { personalInfo } from '../data/portfolioData';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -130,7 +130,7 @@ export default function Hero() {
       opacity: 1,
       scale: 1,
       rotate: 0,
-      transition: { type: "spring", stiffness: 200, damping: 12 },
+      transition: { type: "spring" as const, stiffness: 200, damping: 12 },
     },
   };
 

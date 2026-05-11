@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { label: 'About', href: '#about' },

@@ -37,7 +37,7 @@ export default function Projects() {
           <div className="max-w-4xl relative z-10">
             <h2 className="section-heading">High-Speed Missions (Projects)</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {projects.map((project, i) => (
+              {projects.map((project) => (
                 <ProjectCard key={project.title} project={project} />
               ))}
             </div>

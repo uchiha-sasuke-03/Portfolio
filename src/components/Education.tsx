@@ -1,4 +1,6 @@
-import { GraduationCap, ScrollText } from 'lucide-react'
+import {
+  BookOpen
+} from 'lucide-react'
 import { education } from '../data/portfolioData'
 import SectionCharacter from './SectionCharacter'
 
@@ -28,7 +30,7 @@ export default function Education() {
                         </h3>
                       </div>
                       <div className="flex items-center gap-2 mb-2 text-naruto-orange font-accent text-lg">
-                        <ScrollText size={18} />
+                        <BookOpen size={18} />
                         <p>{item.institution}</p>
                       </div>
                       <p className="font-body text-text-main text-base leading-relaxed font-bold">
