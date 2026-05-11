@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Permanent+Marker&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Naruto & 90s Pop Anime Palette */
+  --color-naruto-orange: #ff9800;
+  --color-naruto-orange-dark: #e65100;
+  --color-rasengan-blue: #00e5ff;
+  --color-shinobi-blue: #1a237e;
+  --color-akatsuki-red: #b71c1c;
+  --color-leaf-green: #2e7d32;
+  --color-pop-yellow: #ffeb3b;
+
+  --color-bg-main: #f0f0f0;
+  /* Paper-like light gray */
+  --color-bg-dark: #121212;
+  --color-text-main: #212121;
+  --color-text-muted: #616161;
+
+  --font-heading: 'Russo One', sans-serif; /* Bold angular anime heading - readable */
+  --font-accent: 'Permanent Marker', cursive;
+  --font-body: 'Nunito', sans-serif; /* Rounded, anime-friendly body font */
+
+  --anim-duration: 0.3s;
+  --anim-ease: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Bouncy pop-art feel */
+
+  --border-thick: 3px solid #000;
+  --shadow-pop: 6px 6px 0px #000;
+  --shadow-pop-hover: 10px 10px 0px #000;
+}
+
+@theme inline {
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+
+  --color-accent-primary: var(--color-naruto-orange);
+  --color-accent-secondary: var(--color-rasengan-blue);
+  --color-accent-tertiary: var(--color-akatsuki-red);
+
+  --color-bg-neo: var(--color-bg-main);
+  --color-text-neo-dark: var(--color-text-main);
+  --color-text-neo: var(--color-text-muted);
+  --color-text-neo-light: var(--color-text-muted);
+
+  --anim-duration: var(--anim-duration);
+  --anim-ease: var(--anim-ease);
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #fff4e0; /* Parchment Color */
+    color: var(--color-text-main);
+    letter-spacing: 0.05em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* 90s Anime Halftone Pattern */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(#000 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 99;
+  }
+
+  /* CRT Scanline Effect */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg,
+        rgba(255, 0, 0, 0.03),
+        rgba(0, 255, 0, 0.01),
+        rgba(0, 0, 255, 0.03));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.3;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text-neo-dark);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-primary);
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-neo);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #a3b1c6;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8e9cad;
+  }
+}
+
+@layer components {
+
+  /* Manga-Pop Card (Replacing Neo-Card) */
+  .neo-card {
+    background-color: #fff;
+    border: var(--border-thick);
+    border-radius: 4px;
+    /* Sharper for 90s feel */
+    box-shadow: var(--shadow-pop);
+    transition: transform 0.2s var(--anim-ease), box-shadow 0.2s var(--anim-ease);
+    will-change: transform, box-shadow;
+  }
+
+  .neo-card:hover {
+    box-shadow: var(--shadow-pop-hover);
+    transform: translate(-4px, -4px);
+  }
+
+  /* Manga-Pop Inset */
+  .neo-inset {
+    background-color: #f8f8f8;
+    border: 2px solid #000;
+    box-shadow: inset 4px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Manga-Pop Section Heading */
+  .section-heading {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    text-shadow: 3px 3px 0px var(--color-pop-yellow);
+  }
+
+  .section-heading::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 6px;
+    background-color: var(--color-naruto-orange);
+    border: 2px solid #000;
+  }
+
+  /* Shinobi Button (Replacing Neumorphic Button) */
+  .framer-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.75rem;
+    border: var(--border-thick);
+    border-radius: 4px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 0.1s var(--anim-ease), box-shadow 0.1s var(--anim-ease);
+    text-decoration: none;
+    will-change: transform, box-shadow;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .framer-button-primary {
+    background-color: var(--color-naruto-orange);
+    color: #fff;
+    box-shadow: 4px 4px 0px #000;
+    text-shadow: 2px 2px 0px #000;
+  }
+
+  .framer-button-primary:hover {
+    background-color: var(--color-pop-yellow);
+    color: #000;
+    box-shadow: 6px 6px 0px #000;
+    transform: translate(-2px, -2px);
+    text-shadow: none;
+  }
+
+  .framer-button-primary:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #000;
+  }
+
+  .framer-button-secondary {
+    background-color: var(--color-rasengan-blue);
+    color: #000;
+    box-shadow: 4px 4px 0px #000;
+  }
+
+  .framer-button-secondary:hover {
+    background-color: #fff;
+    box-shadow: 6px 6px 0px #000;
+    transform: translate(-2px, -2px);
+  }
+}
+
+/* Gradient Text Utilities */
+.text-gradient {
+  background: linear-gradient(to bottom, var(--color-pop-yellow) 0%, var(--color-naruto-orange) 50%, var(--color-naruto-orange-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(4px 4px 0px #000);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
