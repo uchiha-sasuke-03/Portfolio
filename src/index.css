@@ -160,7 +160,7 @@
   /* Manga-Pop Section Heading */
   .section-heading {
     font-family: var(--font-heading);
-    font-size: 3.5rem;
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
     color: #000;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -169,6 +169,8 @@
     display: inline-block;
     padding-bottom: 0.5rem;
     text-shadow: 3px 3px 0px var(--color-pop-yellow);
+    max-width: 100%;
+    line-height: 1.1;
   }
 
   .section-heading::after {

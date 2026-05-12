@@ -10,7 +10,7 @@ export default function Awards() {
       <div ref={ref} className="max-w-4xl mx-auto">
         <h2 style={revealStyle} className="section-heading ">Awards & Achievements</h2>
 
-        <div className="neo-card p-8 relative overflow-hidden texture-leather">
+        <div className="neo-card p-6 sm:p-8 relative overflow-hidden texture-leather">
           {/* Corner rivets */}
           <div className="rivet top-3 left-3" />
           <div className="rivet top-3 right-3" />

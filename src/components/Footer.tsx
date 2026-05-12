@@ -15,15 +15,15 @@ export default function Footer() {
   return (
     <footer id="contact" className="py-24 px-6 relative overflow-hidden bg-white border-t-8 border-black">
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <h2 className="font-heading text-5xl font-bold text-black mb-4 uppercase tracking-tighter">
+        <h2 className="font-heading text-3xl sm:text-5xl font-bold text-black mb-4 uppercase tracking-tighter">
           Send a <span className="text-naruto-orange">Summoning Scroll</span>
         </h2>
-        <p className="font-accent text-2xl text-rasengan-blue mb-12">I'm always ready for a new mission!</p>
+        <p className="font-accent text-xl sm:text-2xl text-rasengan-blue mb-12">I'm always ready for a new mission!</p>
 
         <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
           <a
             href={`mailto:${personalInfo.email}`}
-            className="framer-button framer-button-primary scale-110"
+            className="framer-button framer-button-primary sm:scale-110"
           >
             <Mail size={18} />
             {personalInfo.email}

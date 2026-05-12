@@ -7,8 +7,8 @@ export default function About() {
       <div className="max-w-6xl mx-auto relative">
         <div className="max-w-3xl">
           <h2 className="section-heading">About My Shinobi Way</h2>
-          <div className="neo-card p-8 sm:p-10 relative overflow-hidden bg-white">
-            <p className="font-body text-text-main text-lg leading-relaxed relative z-10 pl-6 border-l-4 border-leaf-green font-bold">
+          <div className="neo-card p-6 sm:p-10 relative overflow-hidden bg-white">
+            <p className="font-body text-text-main text-base sm:text-lg leading-relaxed relative z-10 pl-4 sm:pl-6 border-l-4 border-leaf-green font-bold">
               {personalInfo.summary}
             </p>
           </div>

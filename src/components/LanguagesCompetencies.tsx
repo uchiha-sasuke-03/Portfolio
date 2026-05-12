@@ -14,8 +14,8 @@ export default function LanguagesCompetencies() {
           transform: isVisible ? 'translateX(0)' : 'translateX(-40px)',
           transition: 'all 0.7s ease-out',
         }}>
-          <h2 className="section-heading text-xl ">
-            <Globe size={20} className="text-accent-primary" />
+          <h2 className="section-heading">
+            <Globe size={20} className="text-accent-primary inline-block mr-2 align-baseline" />
             Languages
           </h2>
           <div className="space-y-3">
@@ -42,8 +42,8 @@ export default function LanguagesCompetencies() {
           transform: isVisible ? 'translateX(0)' : 'translateX(40px)',
           transition: 'all 0.7s ease-out 200ms',
         }}>
-          <h2 className="section-heading text-xl ">
-            <Sparkles size={20} className="text-accent-tertiary" />
+          <h2 className="section-heading">
+            <Sparkles size={20} className="text-accent-tertiary inline-block mr-2 align-baseline" />
             Core Competencies
           </h2>
           <div className="neo-card p-6 relative overflow-hidden ">

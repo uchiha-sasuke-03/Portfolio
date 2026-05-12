@@ -160,8 +160,8 @@ export default function Hero() {
       >
         {/* Photo Frame — flips between profile.jpg and Naruto every 5 seconds */}
         <motion.div variants={itemVariants} className="w-full md:w-5/12 flex justify-center md:justify-end relative md:mt-24">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 border-[6px] border-black shadow-[12px_12px_0px_#000] p-4 bg-white rotate-3 z-10">
-             <div className="absolute -top-10 -left-10 w-20 h-20 text-naruto-orange-dark z-20">
+          <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 border-[6px] border-black shadow-[12px_12px_0px_#000] p-4 bg-white rotate-3 z-10">
+             <div className="absolute -top-10 -left-10 w-16 h-16 sm:w-20 sm:h-20 text-naruto-orange-dark z-20">
                <KonohaSymbol className="w-full h-full rotate-[-15deg]" />
              </div>
              <div className="w-full h-full border-2 border-black overflow-hidden p-1 bg-[#f0f0f0] relative">
@@ -211,25 +211,25 @@ export default function Hero() {
             <span className="font-heading tracking-widest text-lg uppercase drop-shadow-[2px_2px_0px_#000]">Jonin Rank Developer</span>
           </motion.div>
 
-          <h1 ref={titleRef} className="font-heading text-6xl sm:text-7xl lg:text-8xl mb-4 leading-none opacity-0">
-            <span className="text-black text-[0.6em] block mb-2 font-accent">Dattebayo! I'm</span>
+          <h1 ref={titleRef} className="font-heading text-5xl sm:text-7xl lg:text-8xl mb-4 leading-none opacity-0">
+            <span className="text-black text-[0.5em] sm:text-[0.6em] block mb-2 font-accent">Dattebayo! I'm</span>
             <span className="text-gradient block">
               {personalInfo.name}
             </span>
           </h1>
 
-          <div ref={subtitleRef} className="h-14 mb-8 flex items-center justify-center md:justify-start opacity-0">
-            <span className="font-heading text-3xl sm:text-4xl text-shinobi-blue">
+          <div ref={subtitleRef} className="h-auto min-h-[3.5rem] mb-8 flex items-center justify-center md:justify-start opacity-0">
+            <span className="font-heading text-2xl sm:text-4xl text-shinobi-blue">
               {typedRole}
             </span>
             <motion.span
               animate={{ opacity: [1, 0, 1] }}
               transition={{ duration: 0.8, repeat: Infinity }}
-              className="inline-block w-1.5 h-10 bg-naruto-orange ml-2"
+              className="inline-block w-1.5 h-8 sm:h-10 bg-naruto-orange ml-2"
             />
           </div>
 
-          <p ref={textRef} className="font-heading text-text-main text-lg max-w-xl mb-10 leading-relaxed opacity-0">
+          <p ref={textRef} className="font-heading text-text-main text-base sm:text-lg max-w-xl mb-10 leading-relaxed opacity-0">
             Mastering the arts of <span className="text-naruto-orange-dark underline decoration-4">Full Stack Development</span> & <span className="text-rasengan-blue underline decoration-4">AI Jutsu</span>. 
             Protecting the digital world from vulnerabilities.
           </p>

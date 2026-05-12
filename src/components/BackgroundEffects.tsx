@@ -40,26 +40,25 @@ const KonohaLeaf = ({ delay }: { delay: number }) => (
 
 const FloatingQuote = ({ text, delay, lane, totalLanes }: { text: string, delay: number, lane: number, totalLanes: number }) => {
   // Use unique vertical placement to prevent bunching at top
-  const verticalPos = (lane / totalLanes) * 90 + 5; // Spreads from 5% to 95% height
+  const verticalPos = (lane / totalLanes) * 85 + 7.5; // Spreads from 7.5% to 92.5% height
   
   return (
     <motion.div
-      className="absolute font-accent text-4xl md:text-7xl text-black select-none pointer-events-none whitespace-nowrap"
+      className="absolute font-accent text-3xl md:text-6xl text-black select-none pointer-events-none whitespace-nowrap"
       style={{
         top: `${verticalPos}%`,
-        right: `-${Math.random() * 100 + 100}%`, // Randomized starting point to prevent initial bunching
-        opacity: 0.2, // Brightened
-        textShadow: '2px 2px 0px rgba(255,255,255,0.5)' // Added shadow to make it feel "brighter" against darks
+        right: `-${Math.random() * 50 + 100}%`, // Reduced starting randomness to be more predictable
+        opacity: 0.15, 
+        textShadow: '1px 1px 0px rgba(255,255,255,0.3)'
       }}
       animate={{ 
         right: '150%',
-        y: [0, lane % 2 === 0 ? 50 : -50, 0],
-        rotate: [lane % 2 === 0 ? -2 : 2, lane % 2 === 0 ? 2 : -2, lane % 2 === 0 ? -2 : 2]
+        rotate: [lane % 2 === 0 ? -1 : 1, lane % 2 === 0 ? 1 : -1, lane % 2 === 0 ? -1 : 1]
       }}
       transition={{ 
-        duration: 40 + (lane * 8) + (Math.random() * 20), // Highly variable durations to prevent syncing
+        duration: 50 + (lane * 5), // Slightly slower and more consistent
         repeat: Infinity,
-        delay: delay + (lane * 3),
+        delay: delay, // Using pure delay for better distribution
         ease: "linear"
       }}
     >

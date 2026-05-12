@@ -29,8 +29,8 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        <a href="#hero" className="font-heading text-3xl font-bold text-black flex items-center gap-2 group">
-          <div className="w-12 h-12 flex items-center justify-center overflow-hidden">
+        <a href="#hero" className="font-heading text-2xl sm:text-3xl font-bold text-black flex items-center gap-2 group">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center overflow-hidden">
             <img 
               src="/hidden_leaf.png" 
               alt="Konoha" 

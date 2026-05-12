@@ -13,12 +13,12 @@ export default function Education() {
             <h2 className="section-heading">Shinobi Academy Path (Education)</h2>
 
             <div className="relative">
-              <div className="absolute left-[19px] top-2 bottom-2 w-[4px] bg-black shadow-[2px_0px_0px_var(--color-akatsuki-red)]" />
+              <div className="absolute left-[15px] sm:left-[19px] top-2 bottom-2 w-[4px] bg-black shadow-[2px_0px_0px_var(--color-akatsuki-red)]" />
 
               <div className="space-y-12">
                 {education.map((item, i) => (
-                  <div key={i} className="relative pl-14 group">
-                    <div className="absolute left-[11px] top-2 w-5 h-5 rounded-full border-4 border-black bg-white group-hover:bg-akatsuki-red transition-colors duration-300 z-10" />
+                  <div key={i} className="relative pl-10 sm:pl-14 group">
+                    <div className="absolute left-[7px] sm:left-[11px] top-2 w-5 h-5 rounded-full border-4 border-black bg-white group-hover:bg-akatsuki-red transition-colors duration-300 z-10" />
 
                     <div className="neo-card p-6 bg-white hover:translate-x-1 transition-transform duration-200">
                       <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-3">
