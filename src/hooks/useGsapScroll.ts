@@ -11,6 +11,8 @@ gsap.registerPlugin(ScrollTrigger);
  * The `animation` callback receives the element and should create a GSAP timeline
  * (or tween) and return it. The hook will automatically kill the timeline on
  * unmount.
+ *
+ * Pass `disabled: true` to skip all GSAP work (useful on mobile).
  */
 export function useGsapScroll({
   animation,
@@ -18,16 +20,19 @@ export function useGsapScroll({
   end,
   scrub = false,
   markers = false,
+  disabled = false,
 }: {
   animation: (el: HTMLElement) => gsap.core.Tween | gsap.core.Timeline;
   start?: string;
   end?: string;
   scrub?: boolean;
   markers?: boolean;
+  disabled?: boolean;
 }) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    if (disabled) return undefined;
     const el = ref.current;
     if (!el) return undefined;
     const tween = animation(el);
@@ -45,7 +50,7 @@ export function useGsapScroll({
       st.kill();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [disabled]);
 
   return ref;
 }

@@ -42,11 +42,13 @@ export function useGsapScrollReveal({
       },
     );
     return () => {
-      // Clean up ScrollTrigger & tween
+      // Only kill this specific tween and its associated ScrollTrigger
+      const st = tween.scrollTrigger;
+      if (st) st.kill();
       tween.kill();
-      ScrollTrigger.getAll().forEach(st => st.kill());
     };
   }, []);
 
   return ref;
 }
+
